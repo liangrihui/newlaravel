@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -69,12 +70,14 @@
     </div>
     {{--内容--}}
     <div class="row clearfix">
-        <div class="col-md-3 column">
+        <div class="col-md-2 column">
             {{--侧边栏--}}
             @section('leftmenu')
             <div class="btn-group btn-group-vertical btn-group-lg">
                 <button class="btn btn-default" type="button">
-                    <em class="glyphicon glyphicon-align-left"></em>文章光临</button>
+                    <em class="glyphicon glyphicon-align-left"></em>文章管理</button>
+                {{--默认选择 在<a>--}}
+                {{--{{Request::getPathInfo()=='article/index' ? 'active':''}}--}}
                 <button class="btn btn-default" type="button">
                     <em class="glyphicon glyphicon-align-center"></em> 用户管理</button>
                 <button class="btn btn-default" type="button">
@@ -86,14 +89,14 @@
                 @show
         </div>
         {{--文章--}}
-        <div class="col-md-9 column">
+        <div class="col-md-10 column">
     @yield('content')
         </div>
     </div>
     {{--页尾--}}
-    <div class="row clearfix">
+    <div class="jumbotron">
         @section('footer')
-        <div class="col-md-12 column">
+        <div class="col-md-12 column text-center">
         文章管理的页尾 联系我 QQ:1239181489
         </div>
             @show
